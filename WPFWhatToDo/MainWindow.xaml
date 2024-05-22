@@ -5,8 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFWhatToDo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
+        Title="MainWindow" Height="600" Width="800">
+    <Grid Background="Bisque">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"></ColumnDefinition>
+            <ColumnDefinition Width="500"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Background="White" Margin="30">
+            
+        </Grid>
+        <Grid Grid.Column="1" Background="White" Margin="30">
+            <ListView Padding="10" x:Name="taskList" ItemsSource="{Binding TaskList}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <local:TaskControll/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
     </Grid>
 </Window>
